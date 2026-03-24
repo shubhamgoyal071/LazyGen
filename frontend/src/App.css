@@ -1,34 +1,115 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
+/* LazyGen Landing Page Styles */
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #0f0f10;
+.section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    padding: 6rem 2rem;
 }
 
-.App-link {
-    color: #61dafb;
+@media (min-width: 768px) {
+    .section {
+        padding: 8rem 4rem;
+    }
 }
 
-@keyframes App-logo-spin {
+@media (min-width: 1024px) {
+    .section {
+        padding: 10rem 8rem;
+    }
+}
+
+/* Panda animation */
+@keyframes panda-breathe {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.03) translateY(-10px);
+    }
+}
+
+.panda-animate {
+    animation: panda-breathe 4s ease-in-out infinite;
+}
+
+/* ZZZ animation */
+@keyframes zzz-float {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+.zzz-animate {
+    animation: zzz-float 2s ease-in-out infinite;
+}
+
+/* Staggered fade in */
+@keyframes fadeInUp {
     from {
-        transform: rotate(0deg);
+        opacity: 0;
+        transform: translateY(30px);
     }
     to {
-        transform: rotate(360deg);
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Pain card hover */
+.pain-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 0 #0A0A0A;
+}
+
+/* Step cards */
+.step-card {
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: scale(1.02);
+}
+
+/* Value items */
+.value-item {
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateX(8px);
+}
+
+/* CTA button pulse */
+@keyframes subtle-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(10, 10, 10, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(10, 10, 10, 0);
+    }
+}
+
+.cta-pulse {
+    animation: subtle-pulse 2s ease-in-out infinite;
 }
