@@ -113,22 +113,22 @@ h1, h2, h3, h4, h5, h6 {
 .input-inverted {
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid rgba(255,255,255,0.4);
     outline: none;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.125rem;
+    font-size: 1rem;
     padding: 1rem 0;
     width: 100%;
-    color: var(--inverted-fg);
+    color: #FAFAFA;
     transition: border-color 0.3s ease;
 }
 
 .input-inverted:focus {
-    border-bottom-color: var(--inverted-fg);
+    border-bottom-color: #FAFAFA;
 }
 
 .input-inverted::placeholder {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.6);
 }
 
 @layer base {

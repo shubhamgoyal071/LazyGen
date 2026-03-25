@@ -44,11 +44,13 @@ class WaitlistEntry(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
     email: EmailStr
+    phone: str | None = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class WaitlistCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     email: EmailStr
+    phone: str = Field(None, max_length=20)
 
 class WaitlistResponse(BaseModel):
     success: bool
@@ -91,7 +93,8 @@ async def join_waitlist(input: WaitlistCreate):
     
     waitlist_entry = WaitlistEntry(
         name=input.name,
-        email=input.email
+        email=input.email,
+        phone=input.phone
     )
     
     doc = waitlist_entry.model_dump()

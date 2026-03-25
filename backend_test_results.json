@@ -1,8 +1,8 @@
 {
   "summary": {
-    "tests_run": 9,
-    "tests_passed": 9,
-    "success_rate": 100.0
+    "tests_run": 8,
+    "tests_passed": 6,
+    "success_rate": 75.0
   },
   "detailed_results": [
     {
@@ -22,40 +22,22 @@
       "method": "POST",
       "endpoint": "waitlist",
       "expected_status": 200,
-      "actual_status": 200,
-      "success": true,
-      "response_data": {
-        "success": true,
-        "message": "Successfully joined the waitlist!",
-        "id": "56bb6600-7cf5-4ff6-934d-1f32bce02133"
-      },
-      "error": null
+      "actual_status": 500,
+      "success": false,
+      "response_data": null,
+      "error": "Internal Server Error"
     },
     {
       "test_name": "Join Waitlist - First Time",
       "method": "POST",
       "endpoint": "waitlist",
       "expected_status": 200,
-      "actual_status": 200,
-      "success": true,
-      "response_data": {
-        "success": true,
-        "message": "Successfully joined the waitlist!",
-        "id": "a7e4bcd5-4b1f-41fa-9698-224812426fe7"
-      },
-      "error": null
-    },
-    {
-      "test_name": "Join Waitlist - Duplicate Email",
-      "method": "POST",
-      "endpoint": "waitlist",
-      "expected_status": 400,
       "actual_status": 400,
-      "success": true,
-      "response_data": {
+      "success": false,
+      "response_data": null,
+      "error": {
         "detail": "Email already registered for waitlist"
-      },
-      "error": null
+      }
     },
     {
       "test_name": "Join Waitlist - Empty Name",
@@ -116,7 +98,7 @@
       "actual_status": 200,
       "success": true,
       "response_data": {
-        "count": 2
+        "count": 4
       },
       "error": null
     },
@@ -128,9 +110,9 @@
       "actual_status": 200,
       "success": true,
       "response_data": {
-        "id": "abe2e7ae-3c43-4be0-80df-592b2bc703b2",
-        "client_name": "test_client_174957",
-        "timestamp": "2026-03-24T17:49:57.348808Z"
+        "id": "9191e165-074a-47b1-a6b7-96ca3505084e",
+        "client_name": "test_client_193752",
+        "timestamp": "2026-03-24T19:37:52.390203Z"
       },
       "error": null
     },
@@ -146,6 +128,11 @@
           "id": "abe2e7ae-3c43-4be0-80df-592b2bc703b2",
           "client_name": "test_client_174957",
           "timestamp": "2026-03-24T17:49:57.348808Z"
+        },
+        {
+          "id": "9191e165-074a-47b1-a6b7-96ca3505084e",
+          "client_name": "test_client_193752",
+          "timestamp": "2026-03-24T19:37:52.390203Z"
         }
       ],
       "error": null
