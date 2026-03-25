@@ -59,7 +59,7 @@ class WaitlistEntry(BaseModel):
 class WaitlistCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     email: EmailStr
-    phone: str = Field(None, max_length=20)
+    phone: Optional[str] = Field(None, max_length=100)
 
 class WaitlistResponse(BaseModel):
     success: bool
@@ -111,16 +111,16 @@ def _send_confirmation_email(name: str, email: str) -> None:
                 <p style="margin:0 0 6px;color:#888;font-size:11px;font-family:'Courier New',monospace;text-transform:uppercase;letter-spacing:2px;">your spot is locked ✅</p>
                 <p style="margin:0;color:#FAFAFA;font-size:15px;line-height:1.6;">
                   We'll hit you up the moment early access opens.<br/>
-                  First <strong>100 users</strong> get special perks 🎁
+                  First <strong>100 users</strong> get special perks 
                 </p>
               </div>
 
               <p style="margin:24px 0 8px;color:#0A0A0A;font-size:14px;font-weight:700;">what lazybot does for you:</p>
               <ul style="margin:0;padding-left:20px;color:#555;font-size:14px;line-height:2;">
-                <li>🧠 AI reads your resume like a recruiter</li>
+                <li> AI reads your resume like a recruiter</li>
                 <li>⚡ matches you with jobs that actually fit</li>
-                <li>🤖 applies on your behalf — literally</li>
-                <li>😴 saves you 200+ hours every month</li>
+                <li> applies on your behalf — literally</li>
+                <li> saves you 200+ hours every month</li>
               </ul>
 
               <p style="margin:32px 0 0;color:#888;font-size:13px;font-family:'Courier New',monospace;">
