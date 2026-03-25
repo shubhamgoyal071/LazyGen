@@ -301,7 +301,7 @@ const WaitlistSection = () => {
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
           <Gift className="w-3 h-3" />
-          first 100 users get lifetime perks
+          first 100 users get special perks
         </motion.div>
 
         <motion.h2 
@@ -321,7 +321,7 @@ const WaitlistSection = () => {
           className="text-sm text-[#888] mb-10"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
-          early access = free premium features forever. frfr.
+          early birds get the best stuff. you know the drill.
         </motion.p>
 
         {!submitted ? (
@@ -379,6 +379,58 @@ const WaitlistSection = () => {
   );
 };
 
+// Contact Section
+const ContactSection = () => {
+  return (
+    <section data-testid="contact-section" className="py-20 px-6 md:px-12 lg:px-24 bg-[#FAFAFA]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+        className="max-w-4xl mx-auto text-center"
+      >
+        <motion.h3 
+          variants={fadeInUp}
+          className="text-2xl md:text-3xl font-black mb-8"
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          got questions? hit us up.
+        </motion.h3>
+
+        <motion.div variants={fadeInUp} className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+          <a 
+            href="mailto:support@lazygen.site" 
+            className="text-sm text-[#666] hover:text-[#0A0A0A] transition-colors"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            data-testid="contact-email"
+          >
+            support@lazygen.site
+          </a>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
+            <a 
+              href="tel:+919718642745" 
+              className="text-sm text-[#666] hover:text-[#0A0A0A] transition-colors"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              data-testid="contact-phone-1"
+            >
+              +91 97186 42745
+            </a>
+            <a 
+              href="tel:+916377406473" 
+              className="text-sm text-[#666] hover:text-[#0A0A0A] transition-colors"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              data-testid="contact-phone-2"
+            >
+              +91 6377406473
+            </a>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
+
 // Footer
 const Footer = () => {
   return (
@@ -416,6 +468,7 @@ function App() {
       <SolutionSection />
       <TimeSavedSection />
       <WaitlistSection />
+      <ContactSection />
       <Footer />
     </div>
   );
